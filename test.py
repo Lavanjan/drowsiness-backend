@@ -4,15 +4,11 @@ import os
 from keras.models import load_model
 import numpy as np
 from flask import Flask, request, jsonify
-from pygame import mixer
 from flask_cors import CORS
 
 
 app = Flask(__name__)
 CORS(app)
-
-mixer.init()
-sound = mixer.Sound('alarm.wav')
 
 face = cv2.CascadeClassifier("haar cascade files\haarcascade_frontalface_alt.xml")
 leye = cv2.CascadeClassifier("haar cascade files\haarcascade_lefteye_2splits.xml")
